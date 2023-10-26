@@ -1,0 +1,69 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"linkReferences": {},
+			"object": "6080604052348015600f57600080fd5b50606180601d6000396000f3fe608060405260043610601c5760003560e01c8063b60d4288146021575b600080fd5b60276029565b005b56fea264697066735822122097170693350d4cde23379bfa8d08cf00aa0bcef578367ce2ed97772fc8499b0164736f6c63430006060033",
+			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x61 DUP1 PUSH1 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x4 CALLDATASIZE LT PUSH1 0x1C JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0xB60D4288 EQ PUSH1 0x21 JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x27 PUSH1 0x29 JUMP JUMPDEST STOP JUMPDEST JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SWAP8 OR MOD SWAP4 CALLDATALOAD 0xD 0x4C 0xDE 0x23 CALLDATACOPY SWAP12 STATICCALL DUP14 ADDMOD 0xCF STOP 0xAA SIGNEXTEND 0xCE CREATE2 PUSH25 0x367CE2ED97772FC8499B0164736F6C63430006060033000000 ",
+			"sourceMap": "60:73:0:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;60:73:0;;;;;;;"
+		},
+		"deployedBytecode": {
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "608060405260043610601c5760003560e01c8063b60d4288146021575b600080fd5b60276029565b005b56fea264697066735822122097170693350d4cde23379bfa8d08cf00aa0bcef578367ce2ed97772fc8499b0164736f6c63430006060033",
+			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x4 CALLDATASIZE LT PUSH1 0x1C JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0xB60D4288 EQ PUSH1 0x21 JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x27 PUSH1 0x29 JUMP JUMPDEST STOP JUMPDEST JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SWAP8 OR MOD SWAP4 CALLDATALOAD 0xD 0x4C 0xDE 0x23 CALLDATACOPY SWAP12 STATICCALL DUP14 ADDMOD 0xCF STOP 0xAA SIGNEXTEND 0xCE CREATE2 PUSH25 0x367CE2ED97772FC8499B0164736F6C63430006060033000000 ",
+			"sourceMap": "60:73:0:-:0;;;;;;;;;;;;;;;;;;12:1:-1;9;2:12;82:48:0;;;:::i;:::-;;;:::o"
+		},
+		"gasEstimates": {
+			"creation": {
+				"codeDepositCost": "19400",
+				"executionCost": "75",
+				"totalCost": "19475"
+			},
+			"external": {
+				"fund()": "98"
+			}
+		},
+		"methodIdentifiers": {
+			"fund()": "b60d4288"
+		}
+	},
+	"abi": [
+		{
+			"inputs": [],
+			"name": "fund",
+			"outputs": [],
+			"stateMutability": "payable",
+			"type": "function"
+		}
+	]
+}
