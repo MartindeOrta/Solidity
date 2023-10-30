@@ -3,10 +3,10 @@
 pragma solidity ^0.6.0;
 
 contract FundMe{
-    mapping(address => uint256) public addressToAmountfunded;
+    mapping(address => uint256) public addressToAmountFunded;
 
     function fund() public payable{
-        addressToAmountfunded[msg.sender] += msg.value;
+        addressToAmountFunded[msg.sender] += msg.value;
 
         
     }
