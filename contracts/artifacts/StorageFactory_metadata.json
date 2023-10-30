@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.6.6+commit.6c089d02"
+		"version": "0.6.12+commit.27d51765"
 	},
 	"language": "Solidity",
 	"output": {
@@ -157,10 +157,14 @@
 			}
 		],
 		"devdoc": {
-			"methods": {}
+			"kind": "dev",
+			"methods": {},
+			"version": 1
 		},
 		"userdoc": {
-			"methods": {}
+			"kind": "user",
+			"methods": {},
+			"version": 1
 		}
 	},
 	"settings": {
@@ -181,6 +185,7 @@
 	"sources": {
 		"contracts/SimpleStorage.sol": {
 			"keccak256": "0xefc880384978af4294669c5d29137e03026ee547e67f7139a877f7ae2b21fc6b",
+			"license": "MIT",
 			"urls": [
 				"bzz-raw://a9db8a48262cb6bd6ac4aed1cdf3fbec7fe31613e72dade935f4b95676e916ea",
 				"dweb:/ipfs/QmQ3JShps4CZcGYWm94aaRnjpafBkXGQADkrLVxpXPDNgd"
@@ -188,6 +193,7 @@
 		},
 		"contracts/StorageFactory.sol": {
 			"keccak256": "0xf66dd374671d93ca3963461585a84fc700656743d8afb798a701cf3b8bd0bff0",
+			"license": "MIT",
 			"urls": [
 				"bzz-raw://049e81b05f89f66eab150c41e51367d5e489c909e739ae19493aabf8e278edd2",
 				"dweb:/ipfs/Qmae7UmHE21aj3iYLK9iLVup86HgYErUfMhvyQ5UwGYQbA"
