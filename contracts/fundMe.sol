@@ -1,5 +1,6 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+//SPDX-License-Identifier: MIT
+
+pragma solidity ^0.6.0;
 
 interface AggregatorV3Interface {
   function decimals() external view returns (uint8);
@@ -17,11 +18,17 @@ interface AggregatorV3Interface {
     view
     returns (uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound);
 }
+import "@chainlink/contracts/src/v0.6/vendor/SafeMathChainlink.sol";
 
 contract FundMe{
+    using SafeMathChainlink for uint256;
     mapping(address => uint256) public addressToAmountFunded;
 
     function fund() public payable{
+        uint256 minimumUSD = 50 * 10 ** 18;
+        require(getConversionRate(msg.value)>= minimumUSD,"You need to spend more eth!");
+        if(msg.value < minimumUSD)
+        // solamente que se puedan hacer transacciones mayores a 50 dolares
         addressToAmountFunded[msg.sender] += msg.value;
 
         
