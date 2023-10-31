@@ -55,5 +55,9 @@ contract FundMe{
         uint256 ethAmountInUsd = (ethPrice *ethAmount)/1000000000000000000;
         return ethAmountInUsd;
     }
+    function withdraw() payable public {
+        msg.sender.transfer(address(this));
+    }
+
 //50.424307010000000000
 }
