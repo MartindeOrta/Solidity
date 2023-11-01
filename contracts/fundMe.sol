@@ -27,7 +27,7 @@ contract FundMe{
     function fund() public payable{
         uint256 minimumUSD = 50 * 10 ** 18;
         require(getConversionRate(msg.value)>= minimumUSD,"You need to spend more eth!");
-        if(msg.value < minimumUSD)
+        
         // solamente que se puedan hacer transacciones mayores a 50 dolares
         addressToAmountFunded[msg.sender] += msg.value;
 
@@ -38,7 +38,7 @@ contract FundMe{
         return priceFeed.version(); 
     }
 
-    function getPrice() public view returns(uint256){
+    function getPrice() public view returns(uint256){//toma el precio del eth en usdt de de 1 
           AggregatorV3Interface priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
            (
             /* uint80 roundID */,
@@ -52,7 +52,7 @@ contract FundMe{
 
     function getConversionRate(uint ethAmount) public view returns (uint256){
         uint256 ethPrice = getPrice();
-        uint256 ethAmountInUsd = (ethPrice *ethAmount)/1000000000000000000;
+        uint256 ethAmountInUsd = (ethPrice * ethAmount) / 1000000000000000000;
         return ethAmountInUsd;
     }
     function withdraw() payable public {
