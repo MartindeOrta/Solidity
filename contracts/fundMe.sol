@@ -21,16 +21,20 @@ interface AggregatorV3Interface {
 import "@chainlink/contracts/src/v0.6/vendor/SafeMathChainlink.sol";
 
 contract FundMe{
+    address public owner;
+    constructor() public {
+        owner = msg.sender;
+    }
     using SafeMathChainlink for uint256;
     mapping(address => uint256) public addressToAmountFunded;
-
+    address[] public funders;
     function fund() public payable{
         uint256 minimumUSD = 50 * 10 ** 18;
         require(getConversionRate(msg.value)>= minimumUSD,"You need to spend more eth!");
         
         // solamente que se puedan hacer transacciones mayores a 50 dolares
         addressToAmountFunded[msg.sender] += msg.value;
-
+        funders.push(msg.sender);
         
     }
     function getVersion() public view returns(uint256){
@@ -55,8 +59,19 @@ contract FundMe{
         uint256 ethAmountInUsd = (ethPrice * ethAmount) / 1000000000000000000;
         return ethAmountInUsd;
     }
-    function withdraw() payable public {
-        msg.sender.transfer(address(this));
+
+
+    modifier onlyOwner{
+        require(msg.sender == owner);
+        _;
+    }
+    function withdraw() payable onlyOwner public {
+        msg.sender.transfer(address(this).balance);
+        for(uint256 funderIndex; funderIndex < funders.length; funderIndex++){
+            address funder = funders[funderIndex];
+            addressToAmountFunded[funder]=0;
+        }
+        funders = new address[](0);
     }
 
 //50.424307010000000000
